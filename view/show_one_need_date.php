@@ -13,11 +13,10 @@
 </nav>
 <div class="apartments">
     <div class="card card-choise">
-        <p class="apartment-city"><ion-icon name="pin"></ion-icon>
+        <p style="padding: 15px" class="apartment-city"><ion-icon name="pin"></ion-icon>
             <?php echo $apartment['city']; ?></p>
-        <h2><span class="apartment-number "><?php echo $apartment['apartment_id']; ?></span>
-            <span  class="apartment-name"><?php echo $apartment['name']; ?></span></h2>
-        <img src="<?='/../database/images/' . $apartment['apartment_id'].'.jpg'; ?>"/>
+        <h2> <span  class="apartment-name"><?php echo $apartment['name']; ?></span></h2>
+        <img class="img-one" src="<?='/../database/images/' . $apartment['apartment_id'].'.jpg'; ?>"/>
         <div class="price-container">
         <div class="price">
             <ion-icon name="cash"></ion-icon>

@@ -29,7 +29,7 @@
                         <ion-icon name="pin"></ion-icon>
                         <?php echo $apartment['city']; ?></p>
 
-                    <img src="<?='/../database/images/' . $apartment['apartment_id'].'.jpg'; ?>"
+                    <img class="img-all" src="<?='/../database/images/' . $apartment['apartment_id'].'.jpg'; ?>"
                 </a>
                 <div class="price">
                     <ion-icon name="cash"></ion-icon>

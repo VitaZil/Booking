@@ -41,7 +41,6 @@ class ApartmentModel
     function checkAvailableDates($startDate, $endDate, $city): array
     {
         $data = [
-
             'start_date' => $startDate,
             'end_date' => $endDate,
         ];
@@ -86,6 +85,7 @@ class ApartmentModel
             return $apartment['city'] == $city;
         });
     }
+
     function bookApartment($id, $startDate, $endDate, $fullPrice): void
     {
         $database = new DatabaseService();
@@ -101,5 +101,17 @@ class ApartmentModel
             $database->saveBooking();
         }
     }
+    function edit(array $params): array
+    {
+//        var_dump($params);
+        $database = new DatabaseService();
+        $apartments = $database->update($params);
 
+        return [];
+    }
+    function delete(array $params): array
+    {
+        $database = new DatabaseService();
+        return $database->delete($params);
+    }
 }

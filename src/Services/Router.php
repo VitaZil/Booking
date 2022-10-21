@@ -46,6 +46,11 @@ class Router
             $pathParts[2] = '{id}';
         }
 
+        if (isset($pathParts[3]) && is_numeric($pathParts[3])) {
+            $id = (int) $pathParts[3];
+            $pathParts[3] = '{id}';
+        }
+
         $routePath = implode('/', $pathParts);
 
         [$controller, $function] = $this->getControllerAndFunction(

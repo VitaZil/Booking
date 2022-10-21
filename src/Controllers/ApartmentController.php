@@ -71,13 +71,36 @@ class ApartmentController
         require (__DIR__ . '/../../view/show_one_full_price.php');
     }
 
-    public static function edit():void
+    public static function admin():void
     {
-
         $apartmentModel = new ApartmentModel();
         $apartments = $apartmentModel->get();
 
-        require (__DIR__ . '/../../view/edit_apartment.php');
+        require (__DIR__ . '/../../view/edit_apartments.php');
     }
 
+    public static function delete():void
+    {
+        $apartmentModel = new ApartmentModel();
+        $apartmentModel->delete($_POST);
+        header('Location: /apartments/edit');
+    }
+    public static function change(int $id):void
+    {
+        $apartmentModel = new ApartmentModel();
+        $apartment = $apartmentModel->getOne($id);
+
+        require (__DIR__ . '/../../view/edit_one_apartment.php');
+    }
+
+    public static function update():void
+    {
+//       var_dump($_POST);
+//       var_dump($_GET);
+//       var_dump($_SERVER);
+
+        $apartmentModel = new ApartmentModel();
+        $apartmentModel->edit($_POST);
+
+    }
 }

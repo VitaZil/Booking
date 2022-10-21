@@ -24,5 +24,14 @@ Router::post('/apartments/{id}/book', BookController::class, 'show');
 Router::post('/apartments/{id}/book/confirm', BookController::class, 'book');
 Router::get('/apartments/{id}/book/confirm', BookController::class, 'book');
 
-Router::get('/apartments/edit', ApartmentController::class, 'edit');
+
+
+Router::get('/apartments/edit', ApartmentController::class, 'admin');
+
+Router::post('/apartments/edit/delete', ApartmentController::class, 'delete');
+Router::get('/apartments/edit/{id}', ApartmentController::class, 'change');
+
+
+Router::post('/apartments/edit/{id}/update', ApartmentController::class, 'update');
+Router::get('/apartments/edit/{id}/update', ApartmentController::class, 'update');
 
