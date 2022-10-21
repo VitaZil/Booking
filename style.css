@@ -1,0 +1,167 @@
+/*//button hover: #2F2F2F , button usual #B5A98D; siaip //#fdf2e9*  #f3f5ed;/
+/*background #007aff;*/
+
+body {
+    background: #ededec;
+    margin: 0;
+    padding: 0;
+    color: #594545;
+    font-family: "Rubik", sans-serif;
+}
+
+#home-form {
+    background-color: #c7c4c4;
+    opacity: 0.9;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 10%;
+padding: 15px;
+}
+
+.nav-link {
+    color: #FFF8EA;
+    text-decoration: none;
+
+    padding: 15px;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    text-decoration: #FFF8EA;
+    text-decoration: underline;
+}
+
+nav {
+    background: #2F2F2F;
+    padding: 30px;
+}
+main {
+    margin: 0 50px 50px 50px;
+}
+form {
+    text-align: center;
+}
+
+h1 {
+    color: #815B5B;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 0;
+    text-align: center;
+    height: 50px;
+}
+h3 {
+    color: #173e43;
+    text-align: center;
+}
+
+input, label {
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.apartments {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #ccccc5
+;
+    border: 2px #434344;
+    box-shadow: 1px 1px 5px #ccc;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.card-choise {
+    width: 50%;
+}
+.card-confirm {
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.apartment-description {
+    color: #173e43;
+}
+
+#dates, li {
+    color: #173e43;
+}
+
+.card:hover {
+    border: 10px darkslategrey;
+    box-shadow: 1px 1px 5px #434344;
+}
+
+.apartment-number {
+    font-size: larger;
+    color: #594545;
+    text-align: left;
+    padding: 5px;
+}
+
+.apartment-name {
+    color: #815B5B;
+}
+
+.apartment-city {
+    color: grey;
+    text-align: left;
+margin-bottom: 5px;
+    padding-left: 10px ;
+}
+
+img {
+    /*object-fit: cover;*/
+    width: 230px;
+    height: 150px;
+    border: 10px #dddfd4;
+    margin-bottom: 10px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    color: #173e43;
+    padding: 5px ;
+}
+.price-container {
+  width: 50%;
+    margin: 0 auto;
+}
+
+.btn {
+    background: #B5A98D;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px dimgrey;
+    color: #dddfd4;
+    border: none;
+    font-weight: bold;
+    width: 150px;
+}
+.btn:hover {
+    box-shadow: 2px 2px 5px darkslategrey;
+    background-color: #2F2F2F;
+}
+
+.message {
+    color: #173e43;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+

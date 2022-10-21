@@ -1,0 +1,15 @@
+{
+    "name": "vita/booking",
+    "autoload": {
+        "psr-4": {
+            "Vita\\Booking\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "VitaZil",
+            "email": "vita.bun@gmail.com"
+        }
+    ],
+    "require": {}
+}
