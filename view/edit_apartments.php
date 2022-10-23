@@ -15,10 +15,10 @@
     <?php require (__DIR__ . './navigation.php')?>
 </nav>
 <main>
-    <h2>ALL OUR APARTMENTS:</h2>
+    <h1 class="basic-heading fixed-edit">ALL OUR APARTMENTS:</h1>
     <div class="apartments">
         <?php foreach ($apartments as $apartment): ?>
-            <div class="card">
+            <div class="card card-edit-all">
                 <a href="#">
                     <h2><span class="apartment-number"><?php echo $apartment['apartment_id']; ?></span>
                         <span  class="apartment-name"><?php echo $apartment['name']; ?></span></h2>

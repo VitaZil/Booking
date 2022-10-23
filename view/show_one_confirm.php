@@ -7,20 +7,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/../../style.css">
     <title>Booking</title>
 </head>
 <body>
     <nav>
         <?php require (__DIR__ . './navigation.php')?>
     </nav>
-<h1>Your reservation</h1>
+    <main>
+<h1 class="fixed-edit">Your reservation</h1>
 <?php if ($apartment === null):?>
     <p class="message">Sorry, these dates are already booked. Please, choose another dates.</p>
     <?php endif;?>
     <?php if ($apartment !== null):?>
-    <div class="card card-choise card-confirm" >
-        <div class="card-choise card-confirm">
+    <div class="card card-edit" >
+        <div class="card-edit">
         <div class="price">
             <ion-icon name="calendar"></ion-icon>
             <?php echo $apartment['days'] . ' nights'; ?>
@@ -56,5 +57,6 @@
             </div>
             <p class="apartment-description"><?php echo $apartment['description']; ?></p>
             <?php endif;?>
+    </main>
 </body>
 </html>

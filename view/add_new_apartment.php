@@ -14,15 +14,16 @@
 <nav>
     <?php require (__DIR__ . './navigation.php')?>
 </nav>
-<h1>ADD YOUR OWN APARTMENT FOR RENT</h1>
-<div class="form">
+<main id="new-container">
+<h1 class="basic-heading fixed-edit">ADD YOUR OWN APARTMENT FOR RENT</h1>
+<div class="form fixed-edit">
     <form method="POST" action="/apartments/new/image" enctype="multipart/form-data">
         <label for="name">Apartments name: </label>
         <input required id="name" type="text" name="name"><br>
         <label for="city">City: </label>
         <input required type="text" id="city" name="city"><br>
         <label for="description">Description: </label>
-        <textarea name="description" id="description" cols="25" rows="3" ></textarea><br>
+        <textarea name="description" id="description" cols="25" rows="4" ></textarea><br>
         <label for="daily_price">Daily price: </label>
         <input required type="number" id="daily_price" name="daily_price"><br>
         <label for="deposit">Deposit: </label>
@@ -30,5 +31,6 @@
         <button type="submit" class="btn">SUBMIT</button>
     </form>
 </div>
+</main>
 </body>
 </html>

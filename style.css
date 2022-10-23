@@ -24,9 +24,27 @@ body {
 
 .form {
     background-color: #ccccc5;
-    width: 40%;
-    margin: 50px auto;
+    width: 100%;
+    margin: -2px auto;
     padding: 15px;
+    position: fixed;
+    top: 100px;
+    z-index: 1;
+}
+
+.form-edit {
+    margin: 0 auto 20px auto;
+    padding: 20px;
+    width: 70%;
+    background-color: #ccccc5
+}
+
+nav {
+    background: #2F2F2F;
+    padding: 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .nav-link {
@@ -41,11 +59,6 @@ body {
     text-decoration: underline;
 }
 
-nav {
-    background: #2F2F2F;
-    padding: 30px;
-}
-
 main {
     margin: 0 50px 50px 50px;
 }
@@ -54,9 +67,28 @@ form {
     text-align: center;
 }
 
+#new-container {
+    margin: 0;
+}
+
+.add {
+    margin-top: 200px;
+}
+
+.basic-heading {
+    padding-top: 40px;
+}
+
 h1 {
     color: #815B5B;
     text-align: center;
+}
+
+.fixed-home {
+    margin-top: 350px;
+}
+.fixed-edit {
+    margin-top: 120px;
 }
 
 h2 {
@@ -70,8 +102,15 @@ h3 {
     text-align: center;
 }
 
-input, label {
-    margin: 5px;
+input, label, select, textarea {
+    box-sizing:border-box;
+    margin: 10px;
+    padding: 2px;
+    border: 0;
+    width: 250px;
+    font-family:inherit;
+    font-size: inherit;
+    color: #815B5B;
 }
 
 a {
@@ -88,16 +127,40 @@ a {
 
 .card {
     background: #ccccc5;
-    border: 2px #434344;
     box-shadow: 1px 1px 5px #ccc;
-    width: 250px;
+    width: 300px;
+    height: 400px;
     text-align: center;
     margin: 20px auto;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+
+}
+
+.card-edit {
+    height: 100%;
+    padding: 20px;
+}
+
+.card-edit-all {
+    height: 530px;
+}
+
+.card:hover {
+    border: 10px darkslategrey;
+    box-shadow: 1px 1px 5px #434344;
 }
 
 .card-choise {
     width: 50%;
+    height: 100%;
+    padding: 0 30px;
+}
+
+.card-edit {
+    margin: 0 auto;
+    width: 51%;
+    height: 100%;
+    padding: 20px;
 }
 
 .card-confirm {
@@ -111,11 +174,6 @@ a {
 
 #dates, li {
     color: #173e43;
-}
-
-.card:hover {
-    border: 10px darkslategrey;
-    box-shadow: 1px 1px 5px #434344;
 }
 
 .apartment-number {
@@ -133,15 +191,16 @@ a {
 .apartment-city {
     color: grey;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 20px;
     margin-top: 0;
 }
 
 .img-all {
     width: 100%;
-    height: 150px;
+    height: 240px;
     border: 10px #dddfd4;
     margin-bottom: 10px;
+    object-fit: cover;
 }
 
 .img-one {
@@ -153,7 +212,7 @@ a {
     display: flex;
     justify-content: space-between;
     color: #173e43;
-    padding: 0 15px 0 15px;
+    padding: 0 20px 0 20px;
 }
 
 .price-container {
@@ -184,4 +243,3 @@ a {
     font-weight: bold;
     padding-bottom: 30px;
 }
-

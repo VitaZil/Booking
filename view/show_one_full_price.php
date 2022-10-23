@@ -14,6 +14,7 @@
 <nav>
     <?php require(__DIR__ . './navigation.php') ?>
 </nav>
+<main>
 <div class="apartments">
     <div class="card card-choise">
         <p class="apartment-city">
@@ -52,5 +53,6 @@
         </form>
     </div>
 </div>
+</main>
 </body>
 </html>

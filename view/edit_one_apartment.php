@@ -7,15 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/../../style.css">
     <title>Edit Apartment</title>
 </head>
 <body>
 <nav>
     <?php require (__DIR__ . './navigation.php')?>
 </nav>
-<h1>Edit "<?php echo $apartment['name']; ?>" apartment</h1>
-<form method="post" action="<?php echo $apartment['apartment_id']; ?>/update">
+<h1 class="fixed-edit">Edit "<?php echo $apartment['name']; ?>" apartment</h1>
+<form class="fixed-edit form-edit" method="post" action="<?php echo $apartment['apartment_id']; ?>/update">
     <label for="name">Apartment Name</label>
     <input type="text" id="name" name="name" placeholder="<?php echo $apartment['name']; ?>"><br>
     <label for="city">City</label>
@@ -26,10 +26,10 @@
     <input type="number" id="deposit" name="deposit" step="0.1" placeholder="<?php echo $apartment['deposit']; ?>"><br>
     <label for="description">Description</label>
     <textarea placeholder="<?php echo $apartment['description']; ?>" name="description" id="description" cols="40" rows="5" ></textarea><br>
-    <button class="btn" name="btn-submit" value="<?php echo $apartment['apartment_id'] ?>">Submit</button>
+    <button class="btn" name="btn-submit" value="<?php echo $apartment['apartment_id'] ?>">SUBMIT</button>
 </form>
 <div class="apartments">
-    <div class="card card-choise">
+    <div class="card card-edit">
         <p class="apartment-city"><ion-icon name="pin"></ion-icon>
             <?php echo $apartment['city']; ?></p>
         <h2 class="apartment-name"><?php echo $apartment['name']; ?></h2>

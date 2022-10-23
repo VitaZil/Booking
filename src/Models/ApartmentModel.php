@@ -79,22 +79,6 @@ class ApartmentModel
         });
     }
 
-    function bookApartment($id, $startDate, $endDate, $fullPrice): void
-    {
-        $database = new DatabaseService();
-        $bookings = $database->getBookings();
-        if (checkAvailability($id, $startDate, $endDate) != null) {
-            $bookings[] = [
-                "apartment_id" => $id,
-                "start_date" => $startDate,
-                "end_date" => $endDate,
-                "price" => $fullPrice,
-            ];
-
-            $database->saveBooking();
-        }
-    }
-
     function edit(array $params): void
     {
         $database = new DatabaseService();

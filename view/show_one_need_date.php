@@ -14,7 +14,8 @@
 <nav>
     <?php require(__DIR__ . './navigation.php') ?>
 </nav>
-<div class="apartments">
+<main class="fixed-edit">
+<div class="apartments ">
     <div class="card card-choise">
         <p style="padding: 15px" class="apartment-city">
             <ion-icon name="pin"></ion-icon>
@@ -35,7 +36,7 @@
         <p class="apartment-description"><?php echo $apartment['description']; ?></p>
         <form action="/apartments/<?= $apartment['apartment_id'] ?>/book" method="post">
             <label for="start_date">Check-in: </label>
-            <input required type="date" id="start_date" name="start_date">
+            <input required type="date" id="start_date" name="start_date"><br>
             <label for="end_date">Check-out: </label>
             <input required type="date" id="end_date" name="end_date">
             <br>
@@ -43,5 +44,6 @@
         </form>
     </div>
 </div>
+</main>
 </body>
 </html>

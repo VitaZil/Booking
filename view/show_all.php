@@ -23,18 +23,15 @@
             <option value="<?= $city?>"> <?= $city ?></option>
         <?php endforeach; ?>
     </select>
-    <br>
     <label for="start_date">Check-in: </label>
     <input type="date" id="start_date" name="start_date">
-    <br>
     <label for="end_date">Check-out: </label>
     <input type="date" id="end_date" name="end_date">
-    <br>
     <input type="submit" name="check-btn" class="btn" value="BOOK NOW" />
 </form>
 </section>
 <main>
-<h2>ALL OUR APARTMENTS:</h2>
+<h1 class="fixed-home">ALL OUR APARTMENTS:</h1>
 <div class="apartments">
 <?php foreach ($apartments as $apartment): ?>
     <div class="card">

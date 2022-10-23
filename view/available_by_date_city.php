@@ -15,7 +15,7 @@
     <?php require (__DIR__ . './navigation.php')?>
 </nav>
 <main>
-    <h1>All available apartments: </h1>
+    <h1 class="fixed-edit">All available apartments: </h1>
     <?php if (!empty($_POST['end_date']) && !empty($_POST['start_date'])): ?>
     <h2 id="dates"><?= $_POST['start_date'] . ' - ' . $_POST['end_date']; ?></h2>
     <?php endif; ?>
