@@ -9,7 +9,6 @@ class BookModel
 {
     function checkAvailability(int $id, string $startDate, string $endDate): ?array
     {
-
         $data = [
             'id' => $id,
             'start_date' => $startDate,
@@ -57,31 +56,30 @@ class BookModel
         return $chosenID;
     }
 
-public function newBooking(int $id, string $startDate, string $endDate):void
-{
+    public function newBooking(int $id, string $startDate, string $endDate): void
+    {
+        $data = [
+            'id' => $id - 1,
+            'start_date' => $startDate,
+            'end_date' => $endDate,
+        ];
 
-    $data = [
-        'id' => $id - 1,
-        'start_date' => $startDate,
-        'end_date' => $endDate,
-    ];
+        $bookingStartDateDate = new DateTime($data['start_date']);
+        $bookingEndDateDate = new DateTime($data['end_date']);
 
-    $bookingStartDateDate = new DateTime($data['start_date']);
-    $bookingEndDateDate = new DateTime($data['end_date']);
+        $bookingInterval = $bookingEndDateDate->diff($bookingStartDateDate);
+        $days = $bookingInterval->format('%a');
 
-    $bookingInterval = $bookingEndDateDate->diff($bookingStartDateDate);
-    $days = $bookingInterval->format('%a');
+        $bookingWeeks = floor($days / 7);
+        $bookingDays = $days - $bookingWeeks * 7;
 
-    $bookingWeeks = floor($days / 7);
-    $bookingDays = $days - $bookingWeeks * 7;
+        $database = new DatabaseService();
+        $apartments = $database->get();
 
-    $database = new DatabaseService();
-    $apartments = $database->get();
+        $fullPrice = $bookingWeeks * $apartments[$data['id']]['weekly_price'] + $bookingDays * $apartments[$data['id']]['daily_price'];
 
-    $fullPrice = $bookingWeeks * $apartments[$data['id']]['weekly_price'] + $bookingDays * $apartments[$data['id']]['daily_price'];
+        $deposit = $fullPrice * $apartments[$data['id']]['deposit'];
 
-    $deposit = $fullPrice * $apartments[$data['id']]['deposit'];
-
-    $database->newBooking($id, $startDate, $endDate, $fullPrice, $deposit);
-}
+        $database->newBooking($id, $startDate, $endDate, $fullPrice, $deposit);
+    }
 }

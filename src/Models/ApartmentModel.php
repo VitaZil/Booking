@@ -6,22 +6,15 @@ use Vita\Booking\Services\DatabaseService;
 class ApartmentModel
 {
 
-    public function __construct()
-    {
-    }
-
     public function get(): array
     {
         $database = new DatabaseService();
-
         return $database->get();
-
     }
 
     public function getOne(int $id): array
     {
         $database = new DatabaseService();
-
         return $database->getOne($id);
     }
 
@@ -44,6 +37,7 @@ class ApartmentModel
             'start_date' => $startDate,
             'end_date' => $endDate,
         ];
+
         file_put_contents(__DIR__ . '/../../database/temporary_data.json', json_encode($data));
 
         $database = new DatabaseService();
@@ -73,7 +67,6 @@ class ApartmentModel
                 return $apartment['city'] === $apartmentByCity['city'];
             });
         }
-
         return $city ? $availableDatesByCity : $apartments;
     }
 
@@ -101,14 +94,13 @@ class ApartmentModel
             $database->saveBooking();
         }
     }
-    function edit(array $params): array
-    {
-//        var_dump($params);
-        $database = new DatabaseService();
-        $apartments = $database->update($params);
 
-        return [];
+    function edit(array $params): void
+    {
+        $database = new DatabaseService();
+        $database->update($params);
     }
+
     function delete(array $params): array
     {
         $database = new DatabaseService();

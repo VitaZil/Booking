@@ -34,10 +34,8 @@ class Router
         ];
     }
 
-//RouterService::get('/ad/{id}', AdController::class, 'show');
     public function doRouting(?string $path, string $method, array $params): void
     {
-
         $id = null;
 
         $pathParts = explode('/', $path);

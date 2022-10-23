@@ -23,7 +23,9 @@ class DatabaseService
         $apartmentId = array_filter($this->apartments, function ($apartment) use ($id) {
             return $apartment['apartment_id'] === $id;
         });
+
         $apartment = $apartmentId[$id - 1];
+
         return $apartment;
     }
 
@@ -46,7 +48,6 @@ class DatabaseService
     public function getBookings()
     {
         return json_decode(file_get_contents(__DIR__ . '/../../database/bookings.json'), true);
-
     }
 
     public function newBooking(int $id, string $startDate, string $endDate, float $fullPrice, float|int $deposit): void
@@ -108,5 +109,3 @@ class DatabaseService
         $this->save();
     }
 }
-//$new = new DatabaseService();
-//var_dump($new->getOne(5));

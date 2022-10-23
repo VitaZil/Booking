@@ -1,27 +1,25 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Apartment</title>
-    <link rel="stylesheet" href="/../style.css">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <title>Booking</title>
 </head>
 <body>
 <nav>
     <?php require (__DIR__ . './navigation.php')?>
 </nav>
-
 <h1>Add photo for <?php echo '"' . $apartments[count($apartments)-1]['name'] . '"'?></h1>
-
 <div class="form">
-
 <form method="POST" action="/../file.php" enctype="multipart/form-data">
-
         <input type="file" id="image" name="image" required><br>
-        <button type="submit">Upload</button>
+        <button class="btn" type="submit">UPLOAD</button>
         </form>
-
 </div>
 </body>
 </html>

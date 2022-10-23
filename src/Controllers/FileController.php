@@ -12,14 +12,6 @@ class FileController
         $apartments = $database->get();
 
         require(__DIR__ . '/../../view/image.php');
-
-    }
-
-    public static function file(): array
-    {
-
-        return [];
-
     }
 }
-//$new = FileController::file();
+

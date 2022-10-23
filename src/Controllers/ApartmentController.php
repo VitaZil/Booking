@@ -4,7 +4,6 @@ use Vita\Booking\Models\ApartmentModel;
 
 class ApartmentController
 {
-
     public static function home():void
     {
         $apartmentModel = new ApartmentModel();
@@ -56,6 +55,7 @@ class ApartmentController
     {
         $apartmentModel = new ApartmentModel();
         $availableApartments = $apartmentModel->checkAvailableDates($_POST['start_date'], $_POST['end_date'], $_POST['city']);
+
         require (__DIR__ . '/../../view/available_by_date_city.php');
     }
 
@@ -79,6 +79,7 @@ class ApartmentController
     {
         $apartmentModel = new ApartmentModel();
         $apartmentModel->delete($_POST);
+
         header('Location: /apartments/edit');
     }
     public static function change(int $id):void
@@ -91,11 +92,9 @@ class ApartmentController
 
     public static function update():void
     {
-
         $apartmentModel = new ApartmentModel();
         $apartmentModel->edit($_POST);
 
         header('Location: /apartments/edit');
-
     }
 }
