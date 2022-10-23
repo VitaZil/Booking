@@ -5,7 +5,6 @@ use Vita\Booking\Services\Router;
 require_once (__DIR__ . './vendor/autoload.php');
 require_once (__DIR__ . './routes.php');
 
-
 $router = new Router;
 
 $router->doRouting(

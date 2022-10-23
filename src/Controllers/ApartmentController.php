@@ -5,10 +5,6 @@ use Vita\Booking\Models\ApartmentModel;
 class ApartmentController
 {
 
-    public function __construct()
-    {
-    }
-
     public static function home():void
     {
         $apartmentModel = new ApartmentModel();
@@ -95,12 +91,11 @@ class ApartmentController
 
     public static function update():void
     {
-//       var_dump($_POST);
-//       var_dump($_GET);
-//       var_dump($_SERVER);
 
         $apartmentModel = new ApartmentModel();
         $apartmentModel->edit($_POST);
+
+        header('Location: /apartments/edit');
 
     }
 }
