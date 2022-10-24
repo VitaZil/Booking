@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/../../style.css">
+    <link rel="stylesheet" href="/../view/style.css">
     <title>Edit Apartment</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
     <?php require (__DIR__ . './navigation.php')?>
 </nav>
 <h1 class="fixed-edit">Edit "<?php echo $apartment['name']; ?>" apartment</h1>
-<form class="fixed-edit form-edit" method="post" action="<?php echo $apartment['apartment_id']; ?>/update">
+<form class="form-edit" method="post" action="<?php echo $apartment['apartment_id']; ?>/update">
     <label for="name">Apartment Name</label>
     <input type="text" id="name" name="name" placeholder="<?php echo $apartment['name']; ?>"><br>
     <label for="city">City</label>

@@ -26,10 +26,11 @@ class BookController
         require (__DIR__ . '/../../view/thank_you.php');
     }
 
-    public static function checkDates(int $id):void
+    public static function checkDatesByCity():void
     {
         $apartmentModel = new ApartmentModel();
-        $apartment = $apartmentModel->getOne($id);
-        require (__DIR__ . '/../../view/show_one_need_date.php');
+        $availableApartments = $apartmentModel->checkAvailableDates($_POST['start_date'], $_POST['end_date'], $_POST['city']);
+
+        require (__DIR__ . '/../../view/available_by_date_city.php');
     }
 }

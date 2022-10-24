@@ -18,7 +18,7 @@ class BookModel
         file_put_contents(__DIR__ . '/../../database/temporary_data.json', json_encode($data));
 
         $database = new DatabaseService();
-        $apartments = $database->get();
+        $apartments = $database->getApartments();
 
         $chosen = array_values(array_filter($apartments, function (array $apartment) use ($data) {
             return $apartment['apartment_id'] == $data['id'];
@@ -74,7 +74,7 @@ class BookModel
         $bookingDays = $days - $bookingWeeks * 7;
 
         $database = new DatabaseService();
-        $apartments = $database->get();
+        $apartments = $database->getApartments();
 
         $fullPrice = $bookingWeeks * $apartments[$data['id']]['weekly_price'] + $bookingDays * $apartments[$data['id']]['daily_price'];
 

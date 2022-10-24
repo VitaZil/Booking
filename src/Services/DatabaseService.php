@@ -7,25 +7,22 @@ class DatabaseService
 
     public function __construct()
     {
-        $this->apartments = $this->get();
+        $this->apartments = $this->getApartments();
         $this->bookings = $this->getBookings();
     }
 
-    public function get(): array
+    public function getApartments(): array
     {
         return json_decode(file_get_contents(__DIR__ . '/../../database/apartments.json'), true);
     }
 
     public function getOne(int $id): array
     {
-        $this->apartments = $this->get();
-
-        $apartmentId = array_filter($this->apartments, function ($apartment) use ($id) {
-            return $apartment['apartment_id'] === $id;
-        });
-
-        $apartment = $apartmentId[$id - 1];
-
+        foreach ($this->apartments as $apartment) {
+           if ($apartment['apartment_id'] === $id) {
+               return $apartment;
+           }
+        }
         return $apartment;
     }
 
@@ -37,12 +34,12 @@ class DatabaseService
         $newApartment['weekly_price'] = $weeklyPrice;
         $this->apartments[] = $newApartment;
 
-        $this->save();
+        $this->saveApartments();
     }
 
-    public function save(): void
+    public function saveApartments(): void
     {
-        file_put_contents(__DIR__ . '/../../database/apartments.json', json_encode($this->apartments));
+        file_put_contents(__DIR__ . '/../../database/apartments.json', json_encode(array_values($this->apartments)));
     }
 
     public function getBookings()
@@ -66,7 +63,7 @@ class DatabaseService
 
     public function saveBooking(): void
     {
-        file_put_contents(__DIR__ . '/../../database/bookings.json', json_encode($this->bookings));
+        file_put_contents(__DIR__ . '/../../database/bookings.json', json_encode(array_values($this->bookings)));
     }
 
     public function delete(array $params): array
@@ -77,7 +74,7 @@ class DatabaseService
                 unlink(__DIR__ . '/../../database/images/' . $apartment['apartment_id'] . ".jpg");
             }
         }
-        $this->save();
+        $this->saveApartments();
 
         return $this->apartments;
     }
@@ -85,9 +82,11 @@ class DatabaseService
     public function update(array $params): void
     {
         $chosenApartment = [];
-        foreach ($this->apartments as $apartKey => $apartment) {
+        $apartmentKey = 0;
+        foreach ($this->apartments as $key => $apartment) {
             if ($apartment['apartment_id'] == $params['btn-submit']) {
                 $chosenApartment = $apartment;
+                $apartmentKey = $key;
             }
         }
 
@@ -99,13 +98,14 @@ class DatabaseService
             }
         }
 
-        array_map(function (array $apartment) use ($chosenApartment) {
+        array_map(function (array $apartment) use ($chosenApartment, $apartmentKey) {
             if ($chosenApartment['apartment_id'] === $apartment['apartment_id']) {
-                unset($this->apartments[$apartment['apartment_id'] - 1]);
-                $this->apartments[] = $chosenApartment;
+                    unset($this->apartments[$apartmentKey]);
+                    $this->apartments[] = $chosenApartment;
             }
         }, $this->apartments);
 
-        $this->save();
+        $this->saveApartments();
     }
 }
+

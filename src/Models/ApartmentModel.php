@@ -6,19 +6,19 @@ use Vita\Booking\Services\DatabaseService;
 class ApartmentModel
 {
 
-    public function get(): array
+    public function getApartments(): array
     {
         $database = new DatabaseService();
-        return $database->get();
+        return $database->getApartments();
     }
 
-    public function getOne(int $id): array
+    public function getOneApartment(int $id): array
     {
         $database = new DatabaseService();
         return $database->getOne($id);
     }
 
-    public function addNewOne(array $newApartment): void
+    public function addNewApartment(array $newApartment): void
     {
         $database = new DatabaseService();
         $database->add($newApartment);
@@ -27,7 +27,7 @@ class ApartmentModel
     public function getUniqueCities(): array
     {
         $database = new DatabaseService();
-        $apartments = $database->get();
+        $apartments = $database->getApartments();
         return array_values(array_unique(array_column($apartments, 'city')));
     }
 
@@ -41,7 +41,7 @@ class ApartmentModel
         file_put_contents(__DIR__ . '/../../database/temporary_data.json', json_encode($data));
 
         $database = new DatabaseService();
-        $apartments = $database->get();
+        $apartments = $database->getApartments();
         $bookings = $database->getBookings();
 
         foreach ($bookings as $booking) {
@@ -73,13 +73,13 @@ class ApartmentModel
     function filterByCity($city): array
     {
         $database = new DatabaseService();
-        $apartments = $database->get();
+        $apartments = $database->getApartments();
         return array_filter($apartments, function ($apartment) use ($city) {
             return $apartment['city'] == $city;
         });
     }
 
-    function edit(array $params): void
+    function update(array $params): void
     {
         $database = new DatabaseService();
         $database->update($params);
