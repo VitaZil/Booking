@@ -82,7 +82,7 @@ class DatabaseService
         foreach ($this->apartments as $key => $apartment) {
             if ($apartment['apartment_id'] == $params['btn-delete']) {
                 unset($this->apartments[$key]);
-                unlink(__DIR__ . '/../../database/images/' . $apartment['apartment_id'] . ".jpg");
+                unlink(__DIR__ . '/../../database/images/' . $apartment['photo_name']);
             }
         }
         $this->saveApartments();
