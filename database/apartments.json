@@ -3,10 +3,11 @@
     "apartment_id": 1,
     "name": "Apartments at Palanga",
     "deposit": 0.5,
-    "daily_price": 10,
+    "daily_price": "100",
     "weekly_price": 63,
     "city": "Palanga",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "1_56347a7862f58.jpg"
   },
   {
     "apartment_id": 2,
@@ -15,7 +16,8 @@
     "daily_price": 20,
     "weekly_price": 126,
     "city": "Smiltyn\u0117",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "2_82347a7862f58.jpg"
   },
   {
     "apartment_id": 3,
@@ -24,7 +26,8 @@
     "daily_price": 15,
     "weekly_price": 95,
     "city": "Nida",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "3_27947a7862f23.jpg"
   },
   {
     "apartment_id": 4,
@@ -33,7 +36,8 @@
     "daily_price": "120",
     "weekly_price": 756,
     "city": "\u0160ventoji",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "4_59347a7862f36.jpg"
   },
   {
     "apartment_id": 5,
@@ -42,7 +46,8 @@
     "daily_price": "100",
     "weekly_price": 630,
     "city": "\u0160ventoji",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "5_63577e8194f51.jpg"
   },
   {
     "apartment_id": 6,
@@ -51,7 +56,8 @@
     "daily_price": "50",
     "weekly_price": 315,
     "city": "Palanga",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "6_63577e382f0d3.jpg"
   },
   {
     "apartment_id": 7,
@@ -60,7 +66,8 @@
     "daily_price": "60",
     "weekly_price": 378,
     "city": "Palanga",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "7_83524k382f0d1.jpg"
   },
   {
     "apartment_id": 8,
@@ -69,7 +76,8 @@
     "daily_price": "200",
     "weekly_price": 1260,
     "city": "Palanga",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "8_53525e382f0d2.jpg"
   },
   {
     "apartment_id": 9,
@@ -78,7 +86,8 @@
     "daily_price": "50",
     "weekly_price": 315,
     "city": "Klaip\u0117da",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "9_52577l682f0j6.jpg"
   },
   {
     "apartment_id": 10,
@@ -87,7 +96,8 @@
     "daily_price": "20",
     "weekly_price": 126,
     "city": "Klaip\u0117da",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "10_53543g382k2p5.jpg"
   },
   {
     "apartment_id": 11,
@@ -96,7 +106,8 @@
     "daily_price": "88",
     "weekly_price": 554.4,
     "city": "Karkl\u0117",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "11_49543r382k2p8.jpg"
   },
   {
     "apartment_id": 12,
@@ -105,7 +116,8 @@
     "daily_price": "67",
     "weekly_price": 422.1,
     "city": "Palanga",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "12_97853w582h3p9.jpg"
   },
   {
     "apartment_id": 13,
@@ -114,7 +126,8 @@
     "daily_price": "100",
     "weekly_price": 630,
     "city": "\u0160ventoji",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "13_07553w889h3p0.jpg"
   },
   {
     "apartment_id": 14,
@@ -123,7 +136,8 @@
     "daily_price": "110",
     "weekly_price": 693,
     "city": "Palanga",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "14_56824k962h5p3.jpg"
   },
   {
     "apartment_id": 15,
@@ -132,7 +146,8 @@
     "daily_price": "111",
     "weekly_price": 699.3,
     "city": "Smiltyn\u0117",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "15_22853b582q4l5.jpg"
   },
   {
     "apartment_id": 16,
@@ -141,7 +156,8 @@
     "daily_price": "111",
     "weekly_price": 699.3,
     "city": "Kunigi\u0161k\u0117s",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "16_80453j582q4y2.jpg"
   },
   {
     "apartment_id": 17,
@@ -150,7 +166,8 @@
     "daily_price": "500",
     "weekly_price": 3150,
     "city": "Nida",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "17_77853b552v5m8.jpg"
   },
   {
     "apartment_id": 18,
@@ -159,7 +176,8 @@
     "daily_price": "300",
     "weekly_price": 1890,
     "city": "Juodkrant\u0117",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "18_78952b254q1l3.jpg"
   },
   {
     "apartment_id": 19,
@@ -168,7 +186,8 @@
     "daily_price": "200",
     "weekly_price": 1260,
     "city": "Preila",
-    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk."
+    "description": "Elegant finishes, modern design and underfloor heating for this 2-bedroom apartment available for rent on the 1st floor of a 5-story, 2013 building in the immediate vicinity of Charles de Gaulle Square. Herastrau park and \u201cAviatorilor\u201d metro station are 5 minutes away on foot, while \u201c1 Mai\u201d shopping area and the Kiseleff park can be reached in a short, 10-minutes walk.",
+    "photo_name": "19_22853a582s4d5.jpg"
   },
   {
     "name": "Vila Nida",
@@ -177,7 +196,8 @@
     "city": "Nida",
     "description": "Welcome to your new home. Vila Nida Apartments has everything you're looking for. ",
     "apartment_id": 20,
-    "weekly_price": 3150
+    "weekly_price": 3150,
+    "photo_name": "20_85853b457q4h8.jpg"
   },
   {
     "name": "J\u016bra ir kopos",
@@ -186,15 +206,27 @@
     "city": "Juodkrant\u0117",
     "description": "Holiday homes that are fully furnished and equipped. Elegance and space to make your stay memorable.",
     "apartment_id": 21,
-    "weekly_price": 1260
+    "weekly_price": 1260,
+    "photo_name": "21_05136b596q4p8.jpg"
   },
   {
     "name": "Apartments near Baltic sea",
     "deposit": "0.2",
-    "daily_price": "80",
+    "daily_price": "100",
     "city": "Preila",
     "description": "An inexpensive place to stay in Vilnius.\r\n\r\n It's not a specially rented apartment: I simply rent one room in a three-room flat where I live and work myself and will be happy to see guests from around the world. The building is 200 m away from the main street which guarantees peace and quiet at all times.",
     "apartment_id": 22,
-    "weekly_price": 504
+    "weekly_price": 504,
+    "photo_name": "22_58733s522m7v6.jpg"
+  },
+  {
+    "name": "Vila Gra\u017eina",
+    "deposit": "0.2",
+    "daily_price": "270",
+    "city": "Smiltyn\u0117",
+    "description": "The apartment is suitable for a couples or for a single travelers. It is very cozy and comfortable space, fully designed and furnished by me. ",
+    "photo_name": "23_63579b84e249b.jpg",
+    "apartment_id": 23,
+    "weekly_price": 1701
   }
 ]

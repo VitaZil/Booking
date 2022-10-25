@@ -1,5 +1,7 @@
 <?php
+
 namespace Vita\Booking\Models;
+
 use DateTime;
 use Vita\Booking\Services\DatabaseService;
 
@@ -38,7 +40,7 @@ class ApartmentModel
             'end_date' => $endDate,
         ];
 
-        file_put_contents(__DIR__ . '/../../database/temporary_data.json', json_encode($data));
+        file_put_contents(__DIR__ . '/../../database/data.json', json_encode($data));
 
         $database = new DatabaseService();
         $apartments = $database->getApartments();

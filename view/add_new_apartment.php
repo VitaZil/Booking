@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/../view/style.css">
+    <link rel="stylesheet" href="/../resources/style.css">
     <title>Add new apartment</title>
 </head>
 <body>
 <nav>
-    <?php require (__DIR__ . './navigation.php')?>
+    <?php require (__DIR__ . '/navigation.php')?>
 </nav>
 <main id="new-container">
 <h1 class="basic-heading fixed-edit">ADD YOUR OWN APARTMENT FOR RENT</h1>
@@ -28,6 +28,7 @@
         <input required type="number" id="daily_price" name="daily_price"><br>
         <label for="deposit">Deposit: </label>
         <input required type="number" id="deposit" name="deposit" step="0.1"><br>
+        <input type="file" id="image" name="image" required><br>
         <button type="submit" class="btn">SUBMIT</button>
     </form>
 </div>

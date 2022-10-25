@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/../view/style.css">
+    <link rel="stylesheet" href="/../resources/style.css">
     <title>Edit Apartment</title>
 </head>
 <body>
 <nav>
-    <?php require (__DIR__ . './navigation.php')?>
+    <?php require (__DIR__ . '/navigation.php')?>
 </nav>
 <main>
     <h1 class="basic-heading fixed-edit">ALL OUR APARTMENTS:</h1>
@@ -24,7 +24,7 @@
                         <span  class="apartment-name"><?php echo $apartment['name']; ?></span></h2>
                     <p style="margin: 10px 0 5px 0" class="apartment-city"><ion-icon name="pin"></ion-icon>
                         <?php echo $apartment['city']; ?></p>
-                    <img alt="Apartment Photo" style="padding-top: 0" class="img-all" src="<?='/../database/images/' . $apartment['apartment_id'].'.jpg'; ?>"
+                    <img alt="Apartment Photo" style="padding-top: 0" class="img-all" src="<?='/../database/images/' . $apartment['photo_name']; ?>"
                 </a>
                 <div class="price">
                     <ion-icon name="cash"></ion-icon>
@@ -35,9 +35,9 @@
                     <?php echo $apartment['weekly_price'] . ' €/ week'; ?>
                 </div>
                 <form action="./edit/delete" method="post">
-                    <button class="btn" name="btn-delete" value="<?php echo $apartment['apartment_id'] ?>">Delete</button>
+                    <button class="btn btn-delete" name="btn-delete" value="<?php echo $apartment['apartment_id'] ?>">Delete</button>
                 </form>
-                    <button class="btn" name="btn-edit" value="<?php echo $apartment['apartment_id'] ?>"><a style="color: #dddfd4;" href="./edit/<?php echo $apartment['apartment_id'] ?>">Edit</a></button>
+                   <a class="btn btn-edit" href="./edit/<?php echo $apartment['apartment_id'] ?>">Edit</a>
             </div>
         <?php endforeach; ?>
     </div>

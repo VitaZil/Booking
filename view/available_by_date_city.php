@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/../view/style.css">
+    <link rel="stylesheet" href="/../resources/style.css">
     <title>Booking</title>
 </head>
 <body>
 <nav>
-    <?php require (__DIR__ . './navigation.php')?>
+    <?php require (__DIR__ . '/navigation.php')?>
 </nav>
 <main>
     <h1 class="fixed-edit">All available apartments: </h1>
@@ -31,7 +31,7 @@
                     <p class="apartment-city">
                         <ion-icon name="pin"></ion-icon>
                         <?php echo $apartment['city']; ?></p>
-                    <img alt="Apartment Photo" class="img-all" src="<?='/../database/images/' . $apartment['apartment_id'].'.jpg'; ?>"
+                    <img alt="Apartment Photo" class="img-all" src="<?='/../database/images/' . $apartment['photo_name']; ?>"
                 </a>
                 <div class="price">
                     <ion-icon name="cash"></ion-icon>

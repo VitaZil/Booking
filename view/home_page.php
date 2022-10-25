@@ -7,12 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/../view/style.css">
+    <link rel="stylesheet" href="/../resources/style.css">
     <title>Booking</title>
 </head>
 <body id="home">
 <nav>
-    <?php require (__DIR__ . './navigation.php')?>
+    <?php require (__DIR__ . '/navigation.php')?>
 </nav>
 <main class="home-form">
     <h2>HOTELS, RESORTS, HOSTELS & MORE?</h2>

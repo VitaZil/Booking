@@ -1,4 +1,5 @@
 <?php
+
 namespace Vita\Booking;
 
 $error = $_FILES['image']['error'];

@@ -7,15 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/../view/style.css">
+    <link rel="stylesheet" href="/../resources/style.css">
     <title>All Apartments</title>
 </head>
 <body>
 <nav>
-    <?php require (__DIR__ . './navigation.php')?>
+    <?php require (__DIR__ . '/navigation.php')?>
 </nav>
 <section class="form">
-<h2>WHERE ARE YOU STAYING?</h2>
 <form method="POST" action="/apartments/availabledates">
     <select name="city" id="city">
         <option value="">--------- Choose city ---------</option>
@@ -24,9 +23,9 @@
         <?php endforeach; ?>
     </select>
     <label for="start_date">Check-in: </label>
-    <input type="date" id="start_date" name="start_date">
+    <input type="date" id="start_date" name="start_date" required>
     <label for="end_date">Check-out: </label>
-    <input type="date" id="end_date" name="end_date">
+    <input type="date" id="end_date" name="end_date" required>
     <input type="submit" name="check-btn" class="btn" value="BOOK NOW" />
 </form>
 </section>
@@ -36,7 +35,7 @@
 <?php foreach ($apartments as $apartment): ?>
     <div class="card">
         <a href="apartments/<?=$apartment['apartment_id'];?>">
-            <img alt="Apartment Photo" class="img-all" src="<?='/../database/images/' . $apartment['apartment_id'].'.jpg'; ?>"/>
+            <img alt="Apartment Photo" class="img-all" src="<?='/../database/images/' . $apartment['photo_name']; ?>"/>
             <p class="apartment-city"><ion-icon name="pin"></ion-icon>
                 <?php echo $apartment['city']; ?></p>
             <h2 class="apartment-name"><?php echo $apartment['name']; ?></h2>

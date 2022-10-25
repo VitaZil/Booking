@@ -15,7 +15,7 @@ class BookModel
             'end_date' => $endDate,
         ];
 
-        file_put_contents(__DIR__ . '/../../database/temporary_data.json', json_encode($data));
+        file_put_contents(__DIR__ . '/../../database/data.json', json_encode($data));
 
         $database = new DatabaseService();
         $apartments = $database->getApartments();
@@ -58,14 +58,8 @@ class BookModel
 
     public function newBooking(int $id, string $startDate, string $endDate): void
     {
-        $data = [
-            'id' => $id - 1,
-            'start_date' => $startDate,
-            'end_date' => $endDate,
-        ];
-
-        $bookingStartDateDate = new DateTime($data['start_date']);
-        $bookingEndDateDate = new DateTime($data['end_date']);
+        $bookingStartDateDate = new DateTime($startDate);
+        $bookingEndDateDate = new DateTime($endDate);
 
         $bookingInterval = $bookingEndDateDate->diff($bookingStartDateDate);
         $days = $bookingInterval->format('%a');
@@ -75,11 +69,17 @@ class BookModel
 
         $database = new DatabaseService();
         $apartments = $database->getApartments();
+        $key = 0;
+        foreach ($apartments as $apartmentKey => $apartment) {
+            if ($apartment['apartment_id'] === $id) {
+                $key = $apartmentKey;
+            }
+        }
 
-        $fullPrice = $bookingWeeks * $apartments[$data['id']]['weekly_price'] + $bookingDays * $apartments[$data['id']]['daily_price'];
+        $fullPrice = $bookingWeeks * $apartments[$key]['weekly_price'] + $bookingDays * $apartments[$key]['daily_price'];
 
-        $deposit = $fullPrice * $apartments[$data['id']]['deposit'];
+        $deposit = $fullPrice * $apartments[$apartmentKey]['deposit'];
 
-        $database->newBooking($id, $startDate, $endDate, $fullPrice, $deposit);
+        $database->newBooking($id, $startDate, $endDate, (int)$fullPrice, (int)$deposit);
     }
 }

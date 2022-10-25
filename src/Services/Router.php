@@ -12,7 +12,8 @@ class Router
         string $path,
         string $controller,
         string $function
-    ): void {
+    ): void
+    {
         self::$routes[] = [
             'path' => $path,
             'controller' => $controller,
@@ -25,7 +26,8 @@ class Router
         string $path,
         string $controller,
         string $function
-    ): void {
+    ): void
+    {
         self::$routes[] = [
             'path' => $path,
             'controller' => $controller,
@@ -40,12 +42,12 @@ class Router
 
         $pathParts = explode('/', $path);
         if (isset($pathParts[2]) && is_numeric($pathParts[2])) {
-            $id = (int) $pathParts[2];
+            $id = (int)$pathParts[2];
             $pathParts[2] = '{id}';
         }
 
         if (isset($pathParts[3]) && is_numeric($pathParts[3])) {
-            $id = (int) $pathParts[3];
+            $id = (int)$pathParts[3];
             $pathParts[3] = '{id}';
         }
 
@@ -83,6 +85,6 @@ class Router
                 return [$route['controller'], $route['function']];
             }
         }
-        return [null, null]; // Throw exception
+        return [null, null];
     }
 }
