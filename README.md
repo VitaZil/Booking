@@ -33,7 +33,7 @@ composer install
 
 3. Start localhost from terminal 
 ```sh
-php -f localhost:8080
+php -S localhost:8080
 ```
 
 ## Status
