@@ -12,4 +12,3 @@ $router->doRouting(
     method: $_SERVER['REQUEST_METHOD'],
     params: $_SERVER['REQUEST_METHOD'] === 'POST' ? $_POST : $_GET
 );
-

@@ -51,6 +51,14 @@ class Router
             $pathParts[3] = '{id}';
         }
 
+        if (isset($pathParts[4]) && isset($pathParts[5])) {
+            $startDate = $pathParts[4];
+            $endDate = $pathParts[5];
+
+            $pathParts[4] = '{startdate}';
+            $pathParts[5] = '{enddate}';
+        }
+
         $routePath = implode('/', $pathParts);
 
         [$controller, $function] = $this->getControllerAndFunction(
@@ -58,27 +66,37 @@ class Router
             $method
         );
 
-        $c = new $controller();
+        if ($controller === null && $function === null) {
+            require(__DIR__ . '/../../view/error.php');
+            die;
+        }
+
+        $controller = new $controller();
 
         if (is_numeric($id) && !empty($params)) {
-            $c->$function($id, $params);
+            $controller->$function($id, $params);
+            return;
+        }
+
+        if (is_numeric($id) && isset($startDate) && isset($endDate)) {
+            $controller->$function($id, $startDate, $endDate);
             return;
         }
 
         if (!empty($params)) {
-            $c->$function($params);
+            $controller->$function($params);
             return;
         }
 
         if (is_numeric($id)) {
-            $c->$function($id);
+            $controller->$function($id);
             return;
         }
 
-        $c->$function();
+        $controller->$function();
     }
 
-    private function getControllerAndFunction(string $path, string $method): array
+    private function getControllerAndFunction(string $path, string $method): int|array
     {
         foreach (self::$routes as $route) {
             if ($route['path'] === $path && $route['method'] === $method) {

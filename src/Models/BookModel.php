@@ -9,27 +9,19 @@ class BookModel
 {
     function checkAvailability(int $id, string $startDate, string $endDate): ?array
     {
-        $data = [
-            'id' => $id,
-            'start_date' => $startDate,
-            'end_date' => $endDate,
-        ];
-
-        file_put_contents(__DIR__ . '/../../database/data.json', json_encode($data));
-
         $database = new DatabaseService();
         $apartments = $database->getApartments();
 
-        $chosen = array_values(array_filter($apartments, function (array $apartment) use ($data) {
-            return $apartment['apartment_id'] == $data['id'];
+        $chosen = array_values(array_filter($apartments, function (array $apartment) use ($id) {
+            return $apartment['apartment_id'] == $id;
         }));
         $chosenID = $chosen[0];
 
-        $bookingStartDateDate = new DateTime($data['start_date']);
-        $bookingEndDateDate = new DateTime($data['end_date']);
+        $bookingStartDateDate = new DateTime($startDate);
+        $bookingEndDateDate = new DateTime($endDate);
         $allBookings = $database->getBookings();
-        $bookings = array_filter($allBookings, function ($booking) use ($data) {
-            return $booking['apartment_id'] == $data['id'];
+        $bookings = array_filter($allBookings, function ($booking) use ($id) {
+            return $booking['apartment_id'] == $id;
         });
 
         $bookingInterval = $bookingEndDateDate->diff($bookingStartDateDate);

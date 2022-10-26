@@ -53,11 +53,11 @@ class DatabaseService
         return json_decode(file_get_contents($this->bookingsFilePath), true);
     }
 
-    public function newBooking(int $id,
+    public function newBooking(int    $id,
                                string $startDate,
                                string $endDate,
-                               int $fullPrice,
-                               int $deposit
+                               int    $fullPrice,
+                               int    $deposit
     ): void
     {
         $newBooking = [
@@ -119,4 +119,3 @@ class DatabaseService
         $this->saveApartments();
     }
 }
-

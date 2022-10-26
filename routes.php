@@ -17,9 +17,8 @@ Router::get('/apartments/edit/{id}', ApartmentController::class, 'change');
 Router::post('/apartments/edit/{id}/update', ApartmentController::class, 'update');
 Router::get('/apartments/edit/{id}/update', ApartmentController::class, 'update');
 Router::post('/apartments/availabledates', BookController::class, 'checkDatesByCity');
-Router::get('/apartments/{id}/book', BookController::class, 'show');
-Router::post('/apartments/{id}/book', BookController::class, 'show');
+Router::get('/apartments/{id}/book/{startdate}/{enddate}', BookController::class, 'show');
+Router::get('/apartments/{id}/book', BookController::class, 'showOne');
+Router::post('/apartments/{id}/book', BookController::class, 'showOne');
 Router::get('/apartments/{id}/book/confirm', BookController::class, 'book');
 Router::post('/apartments/{id}/book/confirm', BookController::class, 'book');
-
-
