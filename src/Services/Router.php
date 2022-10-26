@@ -67,7 +67,7 @@ class Router
         );
 
         if ($controller === null && $function === null) {
-            require(__DIR__ . '/../../view/error.php');
+            require(__DIR__ . '/../../view/error_page.php');
             die;
         }
 
