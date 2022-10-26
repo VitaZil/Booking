@@ -50,7 +50,6 @@ class ApartmentController
         $fileSavePath = __DIR__ . '/../../database/images/' . $uploadedFileName;
         $tempFilePath = $_FILES['image']['tmp_name'];
         move_uploaded_file($tempFilePath, $fileSavePath);
-        echo 'Upload successful';
 
         $newDetails = [
             'name' => $newApartment['name'],
