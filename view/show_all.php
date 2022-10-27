@@ -23,9 +23,9 @@
             <?php endforeach; ?>
         </select>
         <label for="start_date">Check-in: </label>
-        <input type="date" id="start_date" name="start_date" required>
+        <input class="home-input" type="date" id="start_date" name="start_date" required>
         <label for="end_date">Check-out: </label>
-        <input type="date" id="end_date" name="end_date" required>
+        <input class="home-input" type="date" id="end_date" name="end_date" required>
         <input type="submit" name="check-btn" class="btn" value="BOOK NOW"/>
     </form>
 </section>

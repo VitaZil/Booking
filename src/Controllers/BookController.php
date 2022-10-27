@@ -35,7 +35,6 @@ class BookController
 
     public static function book(int $id): void
     {
-
         $bookModel = new BookModel();
         $bookModel->newBooking($id, $_POST['start_date'], $_POST['end_date']);
 

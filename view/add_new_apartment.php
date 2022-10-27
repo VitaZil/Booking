@@ -16,7 +16,6 @@
 </nav>
 <div class="fixed-edit card-new">
     <h2>ADD YOUR OWN APARTMENT FOR RENT</h2>
-
     <form class="add-form" method="POST" action="/apartments/new" enctype="multipart/form-data">
         <div class="register-container">
             <div class="column">
@@ -37,15 +36,11 @@
                 <label class="regitration-label" for="deposit">Deposit (%): </label><br>
                 <input class="regitration-input" type="number" id="deposit" name="deposit" step="0.1"
                        placeholder="Enter apartment deposit" required><br>
-
                 <input class="regitration-input" type="file" id="image" name="image" required><br>
                 <?php if (isset($message)): ?>
-                <span class="error-message">❌<?= $message ?></span>
+                    <span class="error-message">❌<?= $message ?></span>
                 <?php endif; ?>
-
             </div>
-
-
         </div>
         <button type="submit" class="btn btn-add">SUBMIT</button>
     </form>

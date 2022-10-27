@@ -3,6 +3,7 @@
 namespace Vita\Booking\Controllers;
 
 use Vita\Booking\Exceptions\BadFileTypeException;
+use Vita\Booking\Exceptions\PropertyNotFoundException;
 use Vita\Booking\Exceptions\WrongFileUploadException;
 use Vita\Booking\Models\ApartmentModel;
 use Vita\Booking\Services\DatabaseService;
@@ -29,10 +30,19 @@ class ApartmentController
 
     public static function show(int $id): void
     {
-        $apartmentModel = new ApartmentModel();
-        $apartment = $apartmentModel->getOneApartment($id);
+        $message = '';
 
-        require(__DIR__ . '/../../view/show_one_need_date.php');
+        try {
+            $apartmentModel = new ApartmentModel();
+            $apartment = $apartmentModel->getOneApartment($id);
+        } catch (PropertyNotFoundException $exception) {
+            $message = $exception->getMessage();
+            require(__DIR__ . '/../../view/error_page.php');
+        }
+
+        if (strlen($message) === 0) {
+            require(__DIR__ . '/../../view/show_one_need_date.php');
+        }
     }
 
     public static function create(): void
@@ -48,7 +58,7 @@ class ApartmentController
             (new FileController())->imageValidation($_POST);
         } catch (WrongFileUploadException $exception) {
             $message = $exception->getMessage();
-        }     catch (BadFileTypeException $exception) {
+        } catch (BadFileTypeException $exception) {
             $message = $exception->getMessage();
         }
 
@@ -69,8 +79,8 @@ class ApartmentController
 
         $newDetails = [
             'name' => $newApartment['name'],
-            'deposit' => (int) $newApartment['deposit'],
-            'daily_price' => (int) $newApartment['daily_price'],
+            'deposit' => (int)$newApartment['deposit'],
+            'daily_price' => (int)$newApartment['daily_price'],
             'city' => $newApartment['city'],
             'description' => $newApartment['description'],
             'photo_name' => $uploadedFileName,

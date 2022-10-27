@@ -43,7 +43,6 @@
                 <button class="btn" style="width: 200px;">BOOK NOW</button>
             </form>
         </div>
-    </div>
 </main>
 </body>
 </html>

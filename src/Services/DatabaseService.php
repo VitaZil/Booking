@@ -2,6 +2,8 @@
 
 namespace Vita\Booking\Services;
 
+use Vita\Booking\Exceptions\PropertyNotFoundException;
+
 class DatabaseService
 {
     const FULL_WEEK_DISCOUNT = 0.10;
@@ -12,7 +14,7 @@ class DatabaseService
 
     public function __construct(string $fileName)
     {
-        $this->filePath = __DIR__ . '/../../database/'. $fileName .'.json';
+        $this->filePath = __DIR__ . '/../../database/' . $fileName . '.json';
         $this->items = $this->get();
     }
 
@@ -28,7 +30,7 @@ class DatabaseService
                 return $apartment;
             }
         }
-        return [];
+        throw new PropertyNotFoundException();
     }
 
     public function add(array $newApartment): void
@@ -98,7 +100,7 @@ class DatabaseService
                 }
                 if (strlen($params['daily_price']) !== 0) {
                     $weeklyPrice = ($params['daily_price'] * 7) - ($params['daily_price'] * 7 * self::FULL_WEEK_DISCOUNT);
-                    $chosenApartment['weekly_price'] = (int) $weeklyPrice;
+                    $chosenApartment['weekly_price'] = (int)$weeklyPrice;
                 }
             }
         }

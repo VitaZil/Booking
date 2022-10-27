@@ -88,6 +88,7 @@ h1 {
 .fixed-home {
     margin-top: 250px;
 }
+
 .fixed-edit {
     margin-top: 120px;
 }
@@ -104,14 +105,18 @@ h3 {
 }
 
 input, label, select, textarea {
-    box-sizing:border-box;
+    box-sizing: border-box;
     margin: 10px;
-    padding: 2px;
+    padding: 4px;
     border: 0;
-    width: 250px;
-    font-family:inherit;
+    border-radius: 5px;
+    font-family: inherit;
     font-size: inherit;
     color: #815B5B;
+}
+
+.home-input {
+    width: 250px;
 }
 
 a {
@@ -267,16 +272,19 @@ a {
 .card-new {
     margin: 150px auto;
 }
+
 .add-form {
     background-color: #ccccc5;
     width: 65%;
     margin: 0 auto;
 
 }
+
 .register-container {
     text-align: left;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .column {
@@ -289,9 +297,9 @@ a {
 }
 
 .regitration-input {
-padding: 15px;
-    border-radius: 5px;
-width: 100%;
+    padding: 10px;
+
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -302,4 +310,8 @@ width: 100%;
 .error-message {
     color: red;
     margin-left: 20px;
+}
+
+.radio-input {
+    display: flex;
 }
