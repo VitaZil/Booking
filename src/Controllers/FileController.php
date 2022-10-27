@@ -2,7 +2,8 @@
 
 namespace Vita\Booking\Controllers;
 
-use Vita\Booking\Services\DatabaseService;
+use Vita\Booking\Exceptions\BadFileTypeException;
+use Vita\Booking\Exceptions\WrongFileUploadException;
 
 class FileController
 {
@@ -10,8 +11,7 @@ class FileController
     {
         $error = $_FILES['image']['error'];
         if ($error !== UPLOAD_ERR_OK) {
-            echo 'Error uploading file';
-            die;
+            throw new WrongFileUploadException();
         }
 
         $allowedMimeTypes = [
@@ -20,8 +20,7 @@ class FileController
 
         $fileMimeType = $_FILES['image']['type'];
         if (!in_array($fileMimeType, $allowedMimeTypes)) {
-            echo "Bad file type";
-            die;
+            throw new BadFileTypeException();
         }
     }
 }

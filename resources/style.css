@@ -114,10 +114,6 @@ input, label, select, textarea {
     color: #815B5B;
 }
 
-input, select {
-    color: #c7c4c4;
-}
-
 a {
     text-decoration: none;
 }
@@ -266,4 +262,44 @@ a {
 
 .error {
     text-align: center;
+}
+
+.card-new {
+    margin: 150px auto;
+}
+.add-form {
+    background-color: #ccccc5;
+    width: 65%;
+    margin: 0 auto;
+
+}
+.register-container {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 100%;
+    margin: 30px 30px 0 20px;
+}
+
+.regitration-label {
+
+}
+
+.regitration-input {
+padding: 15px;
+    border-radius: 5px;
+width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn-add {
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    margin-left: 20px;
 }

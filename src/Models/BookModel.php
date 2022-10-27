@@ -9,17 +9,13 @@ class BookModel
 {
     function checkAvailability(int $id, string $startDate, string $endDate): ?array
     {
-        $database = new DatabaseService();
-        $apartments = $database->getApartments();
+        $database = new DatabaseService('apartments');
+        $chosenID = $database->getOne($id);
 
-        $chosen = array_values(array_filter($apartments, function (array $apartment) use ($id) {
-            return $apartment['apartment_id'] == $id;
-        }));
-        $chosenID = $chosen[0];
-
-        $bookingStartDateDate = new DateTime($startDate);
-        $bookingEndDateDate = new DateTime($endDate);
-        $allBookings = $database->getBookings();
+        $bookingStartDateDate = (new DateTime($startDate));
+        $bookingEndDateDate = (new DateTime($endDate));
+        $database = new DatabaseService('bookings');
+        $allBookings = $database->get();
         $bookings = array_filter($allBookings, function ($booking) use ($id) {
             return $booking['apartment_id'] == $id;
         });
@@ -29,7 +25,7 @@ class BookModel
         $bookingWeeks = floor($days / 7);
         $bookingDays = $days - $bookingWeeks * 7;
         $fullPrice = $bookingWeeks * $chosenID['weekly_price'] + $bookingDays * $chosenID['daily_price'];
-        $fullDeposit = $fullPrice * $chosenID['deposit'];
+        $fullDeposit = $fullPrice * $chosenID['deposit'] / 100;
         $chosenID['days'] = $days;
         $chosenID['full_price'] = $fullPrice;
         $chosenID['full_deposit'] = $fullDeposit;
@@ -59,8 +55,8 @@ class BookModel
         $bookingWeeks = floor($days / 7);
         $bookingDays = $days - $bookingWeeks * 7;
 
-        $database = new DatabaseService();
-        $apartments = $database->getApartments();
+        $database = new DatabaseService('apartments');
+        $apartments = $database->get();
         $key = 0;
         foreach ($apartments as $apartmentKey => $apartment) {
             if ($apartment['apartment_id'] === $id) {
@@ -70,8 +66,8 @@ class BookModel
 
         $fullPrice = $bookingWeeks * $apartments[$key]['weekly_price'] + $bookingDays * $apartments[$key]['daily_price'];
 
-        $deposit = $fullPrice * $apartments[$apartmentKey]['deposit'];
-
+        $deposit = $fullPrice * $apartments[$key]['deposit'] / 100;
+        $database = new DatabaseService('bookings');
         $database->newBooking($id, $startDate, $endDate, (int)$fullPrice, (int)$deposit);
     }
 }

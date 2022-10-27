@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,26 +12,43 @@
 </head>
 <body>
 <nav>
-    <?php require (__DIR__ . '/navigation.php')?>
+    <?php require(__DIR__ . '/navigation.php') ?>
 </nav>
-<main id="new-container">
-<h1 class="basic-heading fixed-edit">ADD YOUR OWN APARTMENT FOR RENT</h1>
-<div class="form fixed-edit">
-    <form method="POST" action="/apartments/new/image" enctype="multipart/form-data">
-        <label for="name">Apartments name: </label>
-        <input required id="name" type="text" name="name"><br>
-        <label for="city">City: </label>
-        <input required type="text" id="city" name="city"><br>
-        <label for="description">Description: </label>
-        <textarea name="description" id="description" cols="25" rows="4" ></textarea><br>
-        <label for="daily_price">Daily price: </label>
-        <input required type="number" id="daily_price" name="daily_price"><br>
-        <label for="deposit">Deposit: </label>
-        <input required type="number" id="deposit" name="deposit" step="0.1"><br>
-        <input type="file" id="image" name="image" required><br>
-        <button type="submit" class="btn">SUBMIT</button>
+<div class="fixed-edit card-new">
+    <h2>ADD YOUR OWN APARTMENT FOR RENT</h2>
+
+    <form class="add-form" method="POST" action="/apartments/new" enctype="multipart/form-data">
+        <div class="register-container">
+            <div class="column">
+                <label class="regitration-label" for="name">Apartments name: </label><br>
+                <input class="regitration-input" id="name" type="text" name="name" placeholder="Enter apartment name"
+                       required><br>
+                <label class="regitration-label" for="city">City: </label><br>
+                <input class="regitration-input" type="text" id="city" name="city" placeholder="Enter apartment city"
+                       required><br>
+                <label class="regitration-label" for="description">Description: </label><br>
+                <textarea class="regitration-input" name="description" id="description" cols="25" rows="4"
+                          placeholder="Enter apartment description"></textarea><br>
+            </div>
+            <div class="column">
+                <label class="regitration-label" for="daily_price">Daily price (€): </label><br>
+                <input class="regitration-input" type="number" id="daily_price" name="daily_price"
+                       placeholder="Enter apartment daily price" required><br>
+                <label class="regitration-label" for="deposit">Deposit (%): </label><br>
+                <input class="regitration-input" type="number" id="deposit" name="deposit" step="0.1"
+                       placeholder="Enter apartment deposit" required><br>
+
+                <input class="regitration-input" type="file" id="image" name="image" required><br>
+                <?php if (isset($message)): ?>
+                <span class="error-message">❌<?= $message ?></span>
+                <?php endif; ?>
+
+            </div>
+
+
+        </div>
+        <button type="submit" class="btn btn-add">SUBMIT</button>
     </form>
 </div>
-</main>
 </body>
 </html>

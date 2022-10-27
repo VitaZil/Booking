@@ -10,41 +10,35 @@ class ApartmentModel
 
     public function getApartments(): array
     {
-        $database = new DatabaseService();
-        return $database->getApartments();
+        $database = new DatabaseService('apartments');
+        return $database->get();
     }
 
     public function getOneApartment(int $id): array
     {
-        $database = new DatabaseService();
+        $database = new DatabaseService('apartments');
         return $database->getOne($id);
     }
 
     public function addNewApartment(array $newApartment): void
     {
-        $database = new DatabaseService();
+        $database = new DatabaseService('apartments');
         $database->add($newApartment);
     }
 
     public function getUniqueCities(): array
     {
-        $database = new DatabaseService();
-        $apartments = $database->getApartments();
+        $database = new DatabaseService('apartments');
+        $apartments = $database->get();
         return array_values(array_unique(array_column($apartments, 'city')));
     }
 
     function checkAvailableDates($startDate, $endDate, $city): array
     {
-        $data = [
-            'start_date' => $startDate,
-            'end_date' => $endDate,
-        ];
-
-        file_put_contents(__DIR__ . '/../../database/data.json', json_encode($data));
-
-        $database = new DatabaseService();
-        $apartments = $database->getApartments();
-        $bookings = $database->getBookings();
+        $database = new DatabaseService('apartments');
+        $apartments = $database->get();
+        $database = new DatabaseService('bookings');
+        $bookings = $database->get();
 
         foreach ($bookings as $booking) {
             $apartmentStartDate = new DateTime($startDate);
@@ -74,8 +68,8 @@ class ApartmentModel
 
     function filterByCity($city): array
     {
-        $database = new DatabaseService();
-        $apartments = $database->getApartments();
+        $database = new DatabaseService('apartments');
+        $apartments = $database->get();
         return array_filter($apartments, function ($apartment) use ($city) {
             return $apartment['city'] == $city;
         });
@@ -83,13 +77,13 @@ class ApartmentModel
 
     function update(array $params): void
     {
-        $database = new DatabaseService();
+        $database = new DatabaseService('apartments');
         $database->update($params);
     }
 
     function delete(array $params): array
     {
-        $database = new DatabaseService();
+        $database = new DatabaseService('apartments');
         return $database->delete($params);
     }
 }

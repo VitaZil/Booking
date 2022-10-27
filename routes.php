@@ -10,7 +10,8 @@ Router::get('/', ApartmentController::class, 'home');
 Router::get('/apartments', ApartmentController::class, 'index');
 Router::get('/apartments/{id}', ApartmentController::class, 'show');
 Router::get('/apartments/new', ApartmentController::class, 'create');
-Router::post('/apartments/new/image', ApartmentController::class, 'store');
+Router::post('/apartments/new', ApartmentController::class, 'store');
+
 Router::get('/apartments/edit', ApartmentController::class, 'edit');
 Router::post('/apartments/edit/delete', ApartmentController::class, 'destroy');
 Router::get('/apartments/edit/{id}', ApartmentController::class, 'change');

@@ -2,6 +2,8 @@
 
 namespace Vita\Booking\Controllers;
 
+use Vita\Booking\Exceptions\BadFileTypeException;
+use Vita\Booking\Exceptions\WrongFileUploadException;
 use Vita\Booking\Models\ApartmentModel;
 use Vita\Booking\Services\DatabaseService;
 
@@ -39,11 +41,24 @@ class ApartmentController
 
     public static function store(array $newApartment): void
     {
-        $file = new FileController();
-        $file->imageValidation($_POST);
+        $message = '';
 
-        $database = new DatabaseService();
-        $apartments = $database->getApartments();
+        try {
+            (new FileController())->imageValidation($_POST);
+        } catch (WrongFileUploadException $exception) {
+            $message = $exception->getMessage();
+        }     catch (BadFileTypeException $exception) {
+            $message = $exception->getMessage();
+        }
+
+        if (strlen($message) === 0) {
+            header('Location: /apartments');
+        } else {
+            require(__DIR__ . '/../../view/add_new_apartment.php');
+            exit;
+        }
+        $database = new DatabaseService('apartments');
+        $apartments = $database->get();
 
         $uploadedFileId = max(array_column($apartments, 'apartment_id')) + 1;
         $uploadedFileName = $uploadedFileId . '_' . uniqid() . strstr($_FILES['image']['full_path'], '.');
@@ -53,8 +68,8 @@ class ApartmentController
 
         $newDetails = [
             'name' => $newApartment['name'],
-            'deposit' => $newApartment['deposit'],
-            'daily_price' => $newApartment['daily_price'],
+            'deposit' => (int) $newApartment['deposit'],
+            'daily_price' => (int) $newApartment['daily_price'],
             'city' => $newApartment['city'],
             'description' => $newApartment['description'],
             'photo_name' => $uploadedFileName,
@@ -63,9 +78,8 @@ class ApartmentController
         $apartmentModel = new ApartmentModel();
         $apartmentModel->addNewApartment($newDetails);
 
-        header('Location: /apartments');
-    }
 
+    }
 
     public static function edit(): void
     {
@@ -77,7 +91,6 @@ class ApartmentController
 
     public static function change(int $id): void
     {
-
         $apartmentModel = new ApartmentModel();
         $apartment = $apartmentModel->getOneApartment($id);
 

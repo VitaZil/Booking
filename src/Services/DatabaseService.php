@@ -5,59 +5,53 @@ namespace Vita\Booking\Services;
 class DatabaseService
 {
     const FULL_WEEK_DISCOUNT = 0.10;
-    private array $apartments;
-    private string $apartmentsFilePath;
-    private string $bookingsFilePath;
 
-    public function __construct()
+    private string $filePath;
+    private array $items;
+    private string $fileName;
+
+    public function __construct(string $fileName)
     {
-        $this->apartmentsFilePath = __DIR__ . '/../../database/apartments.json';
-        $this->bookingsFilePath = __DIR__ . '/../../database/bookings.json';
-        $this->apartments = $this->getApartments();
-        $this->bookings = $this->getBookings();
+        $this->filePath = __DIR__ . '/../../database/'. $fileName .'.json';
+        $this->items = $this->get();
     }
 
-    public function getApartments(): array
+    public function get(): array
     {
-        return json_decode(file_get_contents($this->apartmentsFilePath), true);
+        return json_decode(file_get_contents($this->filePath), true);
     }
 
     public function getOne(int $id): array
     {
-        foreach ($this->apartments as $apartment) {
+        foreach ($this->items as $apartment) {
             if ($apartment['apartment_id'] === $id) {
                 return $apartment;
             }
         }
-        return $apartment;
+        return [];
     }
 
     public function add(array $newApartment): void
     {
-        $newId = empty($this->apartments) ? 0 : max(array_column($this->apartments, 'apartment_id')) + 1;
+        $newId = empty($this->items) ? 0 : max(array_column($this->items, 'apartment_id')) + 1;
         $weeklyPrice = ($newApartment['daily_price'] * 7) - ($newApartment['daily_price'] * 7 * self::FULL_WEEK_DISCOUNT);
         $newApartment['apartment_id'] = $newId;
         $newApartment['weekly_price'] = $weeklyPrice;
-        $this->apartments[] = $newApartment;
+        $this->items[] = $newApartment;
 
-        $this->saveApartments();
+        $this->save();
     }
 
-    public function saveApartments(): void
+    public function save(): void
     {
-        file_put_contents($this->apartmentsFilePath, json_encode(array_values($this->apartments)));
-    }
-
-    public function getBookings()
-    {
-        return json_decode(file_get_contents($this->bookingsFilePath), true);
+        file_put_contents($this->filePath, json_encode(array_values($this->items)));
     }
 
     public function newBooking(int    $id,
                                string $startDate,
                                string $endDate,
                                int    $fullPrice,
-                               int    $deposit
+                               int    $deposit,
     ): void
     {
         $newBooking = [
@@ -68,33 +62,29 @@ class DatabaseService
             "deposit" => $deposit,
         ];
 
-        $this->bookings[] = $newBooking;
-        $this->saveBooking();
-    }
-
-    public function saveBooking(): void
-    {
-        file_put_contents($this->bookingsFilePath, json_encode(array_values($this->bookings)));
+        $this->items[] = $newBooking;
+        $this->save();
     }
 
     public function delete(array $params): array
     {
-        foreach ($this->apartments as $key => $apartment) {
+        foreach ($this->items as $key => $apartment) {
             if ($apartment['apartment_id'] == $params['btn-delete']) {
-                unset($this->apartments[$key]);
+                unset($this->items[$key]);
                 unlink(__DIR__ . '/../../database/images/' . $apartment['photo_name']);
             }
         }
-        $this->saveApartments();
 
-        return $this->apartments;
+        $this->save();
+
+        return $this->items;
     }
 
     public function update(array $params): void
     {
         $chosenApartment = [];
         $apartmentKey = 0;
-        foreach ($this->apartments as $key => $apartment) {
+        foreach ($this->items as $key => $apartment) {
             if ($apartment['apartment_id'] == $params['btn-submit']) {
                 $chosenApartment = $apartment;
                 $apartmentKey = $key;
@@ -111,11 +101,11 @@ class DatabaseService
 
         array_map(function (array $apartment) use ($chosenApartment, $apartmentKey) {
             if ($chosenApartment['apartment_id'] === $apartment['apartment_id']) {
-                unset($this->apartments[$apartmentKey]);
-                $this->apartments[] = $chosenApartment;
+                unset($this->items[$apartmentKey]);
+                $this->items[] = $chosenApartment;
             }
-        }, $this->apartments);
+        }, $this->items);
 
-        $this->saveApartments();
+        $this->save();
     }
 }
