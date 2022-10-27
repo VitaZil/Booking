@@ -10,7 +10,6 @@ class DatabaseService
 
     private string $filePath;
     private array $items;
-    private string $fileName;
 
     public function __construct(string $fileName)
     {
@@ -54,8 +53,7 @@ class DatabaseService
                                string $endDate,
                                int    $fullPrice,
                                int    $deposit,
-    ): void
-    {
+    ): void {
         $newBooking = [
             "apartment_id" => $id,
             "start_date" => $startDate,

@@ -32,7 +32,7 @@
                         <ion-icon name="pin"></ion-icon>
                         <?php echo $apartment['city']; ?></p>
                     <img alt="Apartment Photo" class="img-all"
-                         src="<?= '/../database/images/' . $apartment['photo_name']; ?>"
+                         src="<?= '/../resources/images/' . $apartment['photo_name']; ?>"
                 </a>
                 <div class="price">
                     <ion-icon name="cash"></ion-icon>

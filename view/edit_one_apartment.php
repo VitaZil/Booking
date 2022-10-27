@@ -35,7 +35,7 @@
             <ion-icon name="pin"></ion-icon>
             <?php echo $apartment['city']; ?></p>
         <h2 class="apartment-name"><?php echo $apartment['name']; ?></h2>
-        <img alt="Apartment Photo" class="img-one" src="<?= '/../database/images/' . $apartment['photo_name']; ?>"/>
+        <img alt="Apartment Photo" class="img-one" src="<?= '/../resources/images/' . $apartment['photo_name']; ?>"/>
         <div class="price-container">
             <div class="price">
                 <ion-icon name="cash"></ion-icon>

@@ -73,7 +73,7 @@ class ApartmentController
 
         $uploadedFileId = max(array_column($apartments, 'apartment_id')) + 1;
         $uploadedFileName = $uploadedFileId . '_' . uniqid() . strstr($_FILES['image']['full_path'], '.');
-        $fileSavePath = __DIR__ . '/../../database/images/' . $uploadedFileName;
+        $fileSavePath = __DIR__ . '/../../resources/images/' . $uploadedFileName;
         $tempFilePath = $_FILES['image']['tmp_name'];
         move_uploaded_file($tempFilePath, $fileSavePath);
 

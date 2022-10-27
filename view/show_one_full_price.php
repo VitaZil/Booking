@@ -22,7 +22,7 @@
                 <?php echo $apartment['city']; ?></p>
             <h2><span class="apartment-number "><?php echo $apartment['apartment_id']; ?></span>
                 <span class="apartment-name"><?php echo $apartment['name']; ?></span></h2>
-            <img alt="Apartment Photo" class="img-one" src="<?= '/../database/images/' . $apartment['photo_name']; ?>"/>
+            <img alt="Apartment Photo" class="img-one" src="<?= '/../resources/images/' . $apartment['photo_name']; ?>"/>
             <div class="price-container">
                 <div class="price">
                     <ion-icon name="cash"></ion-icon>
