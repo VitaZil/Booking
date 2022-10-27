@@ -96,6 +96,10 @@ class DatabaseService
                 if ($apartKey === $paramKey && strlen($param) > 0) {
                     $chosenApartment[$apartKey] = $param;
                 }
+                if (strlen($params['daily_price']) !== 0) {
+                    $weeklyPrice = ($params['daily_price'] * 7) - ($params['daily_price'] * 7 * self::FULL_WEEK_DISCOUNT);
+                    $chosenApartment['weekly_price'] = (int) $weeklyPrice;
+                }
             }
         }
 

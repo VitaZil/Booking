@@ -77,8 +77,6 @@ class ApartmentController
 
         $apartmentModel = new ApartmentModel();
         $apartmentModel->addNewApartment($newDetails);
-
-
     }
 
     public static function edit(): void

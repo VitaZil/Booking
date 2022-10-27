@@ -27,8 +27,8 @@ class BookModel
         $fullPrice = $bookingWeeks * $chosenID['weekly_price'] + $bookingDays * $chosenID['daily_price'];
         $fullDeposit = $fullPrice * $chosenID['deposit'] / 100;
         $chosenID['days'] = $days;
-        $chosenID['full_price'] = $fullPrice;
-        $chosenID['full_deposit'] = $fullDeposit;
+        $chosenID['full_price'] = (int) $fullPrice;
+        $chosenID['full_deposit'] = (int) $fullDeposit;
 
         foreach ($bookings as $booking) {
             $apartmentsStartDate = new DateTime($booking['start_date']);
