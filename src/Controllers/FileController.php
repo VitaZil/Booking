@@ -10,6 +10,7 @@ class FileController
     public function imageValidation(array $params): void
     {
         $error = $_FILES['image']['error'];
+
         if ($error !== UPLOAD_ERR_OK) {
             throw new WrongFileUploadException();
         }
@@ -19,6 +20,7 @@ class FileController
         ];
 
         $fileMimeType = $_FILES['image']['type'];
+
         if (!in_array($fileMimeType, $allowedMimeTypes)) {
             throw new BadFileTypeException();
         }

@@ -31,6 +31,7 @@ class ApartmentController
     {
         $apartmentModel = new ApartmentModel();
         $apartment = $apartmentModel->getOneApartment($id);
+
         require(__DIR__ . '/../../view/show_one_need_date.php');
     }
 

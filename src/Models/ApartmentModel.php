@@ -7,7 +7,6 @@ use Vita\Booking\Services\DatabaseService;
 
 class ApartmentModel
 {
-
     public function getApartments(): array
     {
         $database = new DatabaseService('apartments');

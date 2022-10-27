@@ -45,6 +45,7 @@ class BookController
     public static function checkDatesByCity(array $params): void
     {
         $apartmentModel = new ApartmentModel();
+
         $availableApartments = $apartmentModel->checkAvailableDates(
             $params['start_date'],
             $params['end_date'],
