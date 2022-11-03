@@ -12,6 +12,7 @@ Booking App is a CRUD based Demo project. Created using MVC pattern.
 - Add new apartment
 - Delete existing apartments
 - Edit existing apartments
+- User registration, login and logout functions
 
 
 ## Built With
