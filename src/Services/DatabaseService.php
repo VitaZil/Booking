@@ -76,7 +76,6 @@ class DatabaseService
         }
 
         $this->save();
-
         return $this->items;
     }
 
@@ -110,6 +109,12 @@ class DatabaseService
             }
         }, $this->items);
 
+        $this->save();
+    }
+
+    public function store(array $newUser)
+    {
+        $this->items[] = $newUser;
         $this->save();
     }
 }

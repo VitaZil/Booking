@@ -1,0 +1,30 @@
+[
+  {
+    "user": "vita",
+    "email": "vita.bun@gmail.com",
+    "phone_number": "867650741",
+    "password": "$2y$10$8IOxLUA2vErjRjXZvfSy4.lws.\/s6HFfNPpzSgl0bR7q\/Nnjf3W1u",
+    "user_type": "Admin"
+  },
+  {
+    "user": "tomas",
+    "email": "tom@gmail.com",
+    "phone_number": "123123123123",
+    "password": "$2y$10$MoIHOG8gPT\/2dmBoYx1YOOER3lmpG3Fe8JX2YFZs416Oz47it72bq",
+    "user_type": "User"
+  },
+  {
+    "user": "adomas",
+    "email": "adomas@labas.lt",
+    "phone_number": "123123123",
+    "password": "$2y$10$WPYIz4.UGFDsCXL12weSsOtej8qa6.NETwnHgYZUcQtiwZRXnMmIW",
+    "user_type": "User"
+  },
+  {
+    "user": "gabija",
+    "email": "gabi@labas.lt",
+    "phone_number": "370123123123",
+    "password": "$2y$10$Aj0XEDk7u4NhtjQ.X63oxeqThoV3iLWQk.agNtLFdR82LTwHzT0xK",
+    "user_type": "User"
+  }
+]
