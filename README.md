@@ -26,10 +26,12 @@ HTML, CSS and PHP languages.
 ```sh
 https://github.com/VitaZil/Booking.git
 ```
+
 2. In a project root directory run composer
 ```sh
 composer install
 ```
+
 3. Start localhost from terminal 
 ```sh
 php -S localhost:8080
