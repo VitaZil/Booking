@@ -54,4 +54,3 @@ class BookController
         require(__DIR__ . '/../../view/available_by_date_city.php');
     }
 }
-
