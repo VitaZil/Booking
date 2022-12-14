@@ -38,4 +38,4 @@ php -S localhost:8080
 ```
 
 ## Status
-Booking App is small project and I still working on it.
+Booking App was created in learning purpose and I'm still working on it.
